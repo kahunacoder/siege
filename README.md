@@ -11,6 +11,11 @@
 - Support for proxy servers
 - Support for SSL/TLS
 
+More Info
+
+- <https://github.com/JoeDog/siege>
+- <https://www.joedog.org/siege-home/>
+
 ### How to use this docker image
 
 - Build the image from GitHub:
@@ -70,8 +75,4 @@ Longest transaction:         3150.00 ms
 Shortest transaction:         210.00 ms
 ```
 
-#### Credits
-
-- <https://github.com/JoeDog/siege>
-- <https://www.joedog.org/siege-home/>
   
