@@ -16,7 +16,7 @@
 - Build the image from GitHub:
 
 ```bash
-docker build --no-cache -f ./Dockerfile -t siege .
+docker build --no-cache -f https://raw.githubusercontent.com/kahunacoder/siege/refs/heads/master/Dockerfile -t siege .
 ```
 
 - Run the image:
