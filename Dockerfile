@@ -13,7 +13,7 @@ RUN git clone -b openssl-${OPENSSL_VER} --depth 1 ${OPENSSL_REPO}
 RUN cd /openssl && ./config && make depend && make -j && make install_sw
 
 # build siege with openssl
-ARG SIEGE_VER=v4.1.3
+ARG SIEGE_VER=v4.1.7
 ARG SIEGE_REPO=https://github.com/JoeDog/siege.git
 RUN git clone --depth 1 -b ${SIEGE_VER} ${SIEGE_REPO} && cd siege && utils/bootstrap && ./configure --with-ssl=/usr/local/bin/openssl && make && make install
 
