@@ -7,9 +7,9 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get install -y git build-essential curl unzip automake zlib1g-dev && apt-get clean && rm -rf /var/lib/apt/lists
 
 # build openssl
-ARG OPENSSL_VER="1_1_1q"
+ARG OPENSSL_VER="3.5.0"
 ARG OPENSSL_REPO=https://github.com/openssl/openssl.git
-RUN git clone -b OpenSSL_${OPENSSL_VER} --depth 1 ${OPENSSL_REPO}
+RUN git clone -b openssl-${OPENSSL_VER} --depth 1 ${OPENSSL_REPO}
 RUN cd /openssl && ./config && make depend && make -j && make install_sw
 
 # build siege with openssl
