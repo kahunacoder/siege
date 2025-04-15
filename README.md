@@ -56,3 +56,18 @@ docker run -it --rm siege -t30s -c10 -b -v -d1 --header="Authorization:Basic dXN
 
 Replace `user` and `password` with your actual username and password. The output will be the base64-encoded string that you can use in the `--header` option of the `siege` command.
 
+```bash
+Lifting the server siege...
+Transactions:                 526    hits
+Availability:                 100.00 %
+Elapsed time:                  31.00 secs
+Data transferred:              52.64 MB
+Response time:                481.96 ms
+Transaction rate:              16.97 trans/sec
+Throughput:                     1.70 MB/sec
+Concurrency:                    8.18
+Successful transactions:      526
+Failed transactions:            0
+Longest transaction:         3150.00 ms
+Shortest transaction:         210.00 ms
+```
