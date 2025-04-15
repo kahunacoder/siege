@@ -54,8 +54,6 @@ echo -n 'user:password' | openssl base64
 docker run -it --rm siege -t30s -c10 -b -v -d1 --header="Authorization:Basic dXNlcjpwYXNzd29yZA==" 'https://example.com'
 ```
 
-Replace `user` and `password` with your actual username and password. The output will be the base64-encoded string that you can use in the `--header` option of the `siege` command.
-
 ```bash
 Lifting the server siege...
 Transactions:                 526    hits
