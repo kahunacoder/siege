@@ -22,6 +22,8 @@ COPY --from=builder /usr/local/ /usr/local/
 RUN echo "/usr/local/lib64" >> /etc/ld.so.conf.d/all-libs.conf && ldconfig
 RUN openssl version -v -e
 
+
+VOLUME /root
 ENTRYPOINT ["/usr/local/bin/siege"]
 CMD ["--help"]
 # docker build -t siege:latest .
