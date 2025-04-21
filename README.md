@@ -87,6 +87,14 @@ This command mounts the local directory `/your/local/directory` to the container
 
 The siege.conf file is a configuration file for the siege tool. It allows you to customize various settings and options for your siege tests.
 
+The login option in the siege.conf file is used to specify the credentials for basic authentication. The format is `user:password:realm`, where `user` is the username, `password` is the password, and `realm` is the authentication realm. This option allows you to perform authenticated requests during your siege tests. The realm value is optional but is useful if you run seige on multiple sites. To get the realm value, you can use the `curl` command with the `-i` option to see the headers returned by the server. The realm value is usually included in the `WWW-Authenticate` header. For example:
+
+```bash
+curl -i https://example.com
+```
+
+This command will return the headers, and you can look for the `WWW-Authenticate` header to find the realm value.
+
 These are the changes I made to my siege.conf from the default siege.conf file:
 
 ```conf
@@ -96,7 +104,7 @@ show-logfile = false
 logging = true
 parser = false
 file = $HOME/urls.txt
-login = user:password
+login = user:password:realm
 ```
 
 I also created a `/your/local/directory/urls.txt` file. The urls.txt file contains the URLs that you want to test with siege. Each URL should be on a separate line.
