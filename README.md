@@ -95,6 +95,8 @@ curl -i https://example.com
 
 This command will return the headers, and you can look for the `WWW-Authenticate` header to find the realm value.
 
+`WWW-Authenticate: Basic realm="Some Realm" access-control-allow-origin: * access-control-allow-credentials: true` and we can use `Some Realm` as the realm value in the siege.conf file.
+
 These are the changes I made to my siege.conf from the default siege.conf file:
 
 ```conf
@@ -104,7 +106,8 @@ show-logfile = false
 logging = true
 parser = false
 file = $HOME/urls.txt
-login = user:password:realm
+login = user:password:Some Realm
+login = otheruser:otherpassword:Other Realm
 ```
 
 I also created a `/your/local/directory/urls.txt` file. The urls.txt file contains the URLs that you want to test with siege. Each URL should be on a separate line.
